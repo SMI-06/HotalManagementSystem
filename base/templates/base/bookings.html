@@ -1,0 +1,55 @@
+{%extends 'main.html'%}
+{% block content %}
+
+	<section class="breadcrumb_area blog_banner_two">
+		<div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">
+		</div>
+		<div class="container">
+			<div class="page-cover text-center">
+				<h2 class="page-cover-tittle f_48">Booked Rooms</h2>
+				<ol class="breadcrumb">
+					<li><a href="{%url 'home'%}">Home</a></li>
+					<li><a href="{%url 'profile'%}">User</a></li>
+					<li class="active">Booked Rooms</li>
+				</ol>
+			</div>
+		</div>
+	</section>
+	<!-- Start Align Area -->
+	<div class="whole-wrap">
+		<div class="container">
+			<div class="section-top-border">
+				<h3 class="mb-30 title_color">Please Contact Us To Update or Cancel The Reservations</h3>
+				<div class="progress-table-wrap">
+					<table class="table text-center">
+						<tr >
+							
+							<th >Room </th>
+							<th >Check In Date </th>
+							<th >Adults </th>
+							<th >Children </th>
+							<th >Total Price </th>
+							<th >Special Requests </th>
+							<!-- <th >Approved? </th> -->
+						
+						</tr>
+							{% for booking in bookings%}
+						<tr class="table-row">
+			
+							<td >{{booking.room}} </td>
+							<td >{{booking.check_in_date}} </td>
+							<td >{{booking.adults}} </td>
+							<td >{{booking.children}} </td>
+							<td >{{booking.total_price}} </td>
+							<td >{{booking.special_requests}} </td>
+							<!-- <td >{{booking.is_approved}} </td> -->
+
+							</tr>
+						{%endfor%}
+						</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Align Area -->
+{%endblock content%}

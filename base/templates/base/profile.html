@@ -1,0 +1,55 @@
+{%extends 'main.html'%}
+{% block content %}
+{% load static %}
+
+
+    <!--================Breadcrumb Area =================-->
+    <section class="breadcrumb_area blog_banner_two">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">
+        </div>
+        <div class="container">
+            <div class="page-cover text-center">
+                <h2 class="page-cover-tittle f_48">User Profile page</h2>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">User Profile</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <!--================Breadcrumb Area =================-->
+
+    <section class="blog_area single-post-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-2 posts-list">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget">
+                            <div class="input-group">
+                                <h3 style="color:#f3c300; margin-left:310px">Profile</h3>
+                            </div>
+                            <div class="br"></div>
+                        </aside>
+                        <aside class="single_sidebar_widget author_widget">
+                            <img class="author_img rounded-circle" src="../.././../static/image/blog/author.png" alt="">
+                            <h4>{{request.user.first_name}}</h4>
+                            <p>{{request.user.email}}</p>
+                            <div class="br"></div>
+                        </aside>
+                        <aside class="single_sidebar_widget search_widget">
+                            <div class="input-group">
+                                <div class="col-md-12">
+                                <a href="{% url 'booking' request.user.id %}" class="btn" style="background-color: #f3c300; color:white; margin-left:280px">My Bookings</a></div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+{%endblock%}
